@@ -23,7 +23,7 @@ read -p "Nombre de la red WiFi (SSID): " WIFI_SSID
 read -p "Contraseña del WiFi: " WIFI_PASS
 
 apt update
-apt install -y isc-kea-dhcp4-server
+apt install -y kea-dhcp4-server
 
 mkdir -p /etc/netplan
 [ -f "$NETPLAN" ] && cp "$NETPLAN" "${NETPLAN}.bak"
