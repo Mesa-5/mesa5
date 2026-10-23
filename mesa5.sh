@@ -11,8 +11,8 @@ fi
 
 WAN="wlp0s20f3"
 LAN="enp0s31f6"
-LAN_IP="192.168.50.1"
-RED="192.168.50.0/24"
+LAN_IP="192.168.15.1"
+RED="192.168.15.0/24"
 NETPLAN="/etc/netplan/99-pasarela.yaml"
 KEA="/etc/kea/kea-dhcp4.conf"
 
@@ -59,7 +59,7 @@ cat > "$KEA" <<EOF
     "subnet4": [{
       "id": 1,
       "subnet": "$RED",
-      "pools": [{ "pool": "192.168.50.100 - 192.168.50.200" }],
+      "pools": [{ "pool": "192.168.15.100 - 192.168.15.200" }],
       "option-data": [
         { "name": "routers", "data": "$LAN_IP" },
         { "name": "domain-name-servers", "data": "8.8.8.8, 1.1.1.1" },
